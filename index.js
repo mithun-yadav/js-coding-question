@@ -68,3 +68,21 @@ function addFoo(obj) {
 console.log(addFoo(x));
 console.log(addFoo(y));
 */
+/*******************************************************************/
+/*
+let x = 1;
+
+if (function f() {}) {
+  x += typeof f;
+}
+
+console.log(x); // 1undefined because function f is not hoisted in this context
+*/
+/*******************************************************************/
+/*
+let x = 1;
+function f() {}
+x = x + typeof f;
+
+console.log(x); // 1function because function f is hoisted in this context
+*/
