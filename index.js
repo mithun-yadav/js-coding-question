@@ -42,3 +42,17 @@ a[c] = 456;
 
 console.log(a[b]); // 456
 */
+/********************************************************************/
+/*
+const obj = {
+    a: "foo",
+    b: function () {
+      console.log(this.a);
+    },
+  };
+  
+  const c = obj.b;
+  
+  obj.b(); // foo
+  c(); // undefined
+  */
