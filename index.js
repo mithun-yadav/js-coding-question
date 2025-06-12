@@ -56,3 +56,15 @@ const obj = {
   obj.b(); // foo
   c(); // undefined
   */
+/********************************************************************/
+/*
+const x = { foo: 1 };
+const y = { foo: 2 };
+
+function addFoo(obj) {
+  return obj.foo + 1;
+}
+
+console.log(addFoo(x));
+console.log(addFoo(y));
+*/
