@@ -32,3 +32,13 @@ const result = countItem(arr);
 console.log(result); //{ a: 3, b: 3, c: 2, d: 1, e: 1, f: 2, g: 1, h: 1 }
 */
 /********************************************************************/
+/*
+let a = {};
+let b = { key: "b" };
+let c = { key: "c" };
+
+a[b] = 123;
+a[c] = 456;
+
+console.log(a[b]); // 456
+*/
