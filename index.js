@@ -86,3 +86,56 @@ x = x + typeof f;
 
 console.log(x); // 1function because function f is hoisted in this context
 */
+/******************************************************************/
+/*
+let x = [1, 2, 3];
+let y = [1, 2, 3];
+let z = y;
+
+console.log(x == y);
+console.log(x === y);
+console.log(z == y);
+console.log(z === y);
+console.log(z == x); //false,false,true,true,false
+*/
+/******************************************************************/
+/*
+for(let i = 0; i < 5; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 1000);
+}
+*/
+// This will log 5 five times because the loop completes before the timeouts execute
+/******************************************************************/
+/*
+for(var i = 0; i < 5; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 1000);
+}
+  */
+// This will log 5 five times because var is function scoped and the loop completes before the timeouts execute
+/******************************************************************/
+/*
+for(let i = 0; i < 5; i++) {
+  setTimeout((j) => {
+    console.log(j);
+  }, 1000, i);
+}
+*/
+// This will log 0, 1, 2, 3, 4 because let is block scoped and the value of i is passed to the timeout function
+/******************************************************************/
+/*
+for (var i = 0; i < 5; i++) {
+  setTimeout(
+    (j) => {
+      console.log(j);
+    },
+    1000,
+    i // third parameter to pass the current value of i to the timeout function
+  );
+}
+  */
+// This will log 0, 1, 2, 3, 4 because var is function scoped and the value of i is passed to the timeout function
+/******************************************************************/
