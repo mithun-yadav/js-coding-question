@@ -139,3 +139,143 @@ for (var i = 0; i < 5; i++) {
   */
 // This will log 0, 1, 2, 3, 4 because var is function scoped and the value of i is passed to the timeout function
 /******************************************************************/
+/*
+var x = 0;
+for (let i = 0; i < 5; i++) {
+  setTimeout(() => {
+    x++;
+    console.log(x);
+  }, 1000);
+} // output will be 1, 2, 3, 4, 5 with a delay of 1 second
+ */
+/******************************************************************/
+/*
+let a = { x: 1 };
+let b = { x: 2 };
+let c = { x: 3 };
+let d = { x: 4 };
+let e = { x: 5 };
+let arr = [a, b, c, d, e];
+
+arr.forEach((obj) => (obj.x = obj.x * 2));
+
+console.log(a.x, b.x, c.x, d.x, e.x);// output 2,4,6,8,10
+*/
+/******************************************************************/
+/*
+let num = 0;
+
+function test() {
+  var num = 1;
+  return num;
+}
+
+console.log(test());
+console.log(num); // output 1,0
+*/
+/******************************************************************/
+/*
+let obj = { name: "John", age: 25 };
+let newObj = { ...obj, age: 30 };
+
+console.log(obj.age);
+console.log(newObj.age);// output 25,30
+*/
+/******************************************************************/
+/*
+const add = (a = 1, b = 2) => a + b;
+console.log(add());
+console.log(add(5));
+console.log(add(undefined, 10)); // output 3,7,11
+*/
+/******************************************************************/
+/*
+const name = "John";
+const age = 25;
+
+const user = { name, age };
+console.log(user); // { name: 'John', age: 25 }
+*/
+/******************************************************************/
+/*
+console.log(typeof null); // object
+console.log(typeof undefined); // undefined
+console.log(null === undefined);// false
+console.log(null == undefined); // true
+*/
+/******************************************************************/
+/*
+function sumOfPositiveNumbers(numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > 0) {
+      sum += numbers[i];
+    }
+  }
+  return sum;
+}
+
+// Example usage:
+const arr = [1, -2, 3, 4, -5, 6];
+console.log(sumOfPositiveNumbers(arr)); // Output: 14
+*/
+/******************************************************************/
+/*
+function removeVowels(str) {
+  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    if (!vowels.includes(str[i])) {
+      newStr += str[i];
+    }
+  }
+  return newStr;
+}
+
+// Example usage:
+const str = "This is a test string with vowels";
+console.log(removeVowels(str)); // Output: Ths s  tst strng wth vwls
+ */
+/******************************************************************/
+/*
+function sortStrings(arr) {
+  return arr.sort();
+}
+
+// Example usage:
+const strings = ["apple", "banana", "cherry", "date", "elderberry"];
+console.log(sortStrings(strings)); // Output: ['apple', 'banana', 'cherry', 'date', 'elderberry']
+*/
+/******************************************************************/
+/*
+function isPalindrome(str) {
+  const reversedStr = str.split("").reverse().join("");
+  return str === reversedStr;
+}
+
+// Example usage:
+console.log(isPalindrome("racecar")); // Output: true
+console.log(isPalindrome("hello")); // Output: false
+*/
+/******************************************************************/
+/*
+function findSecondHighest(arr) {
+  const sortedArr = arr.sort((a, b) => b - a);
+  return sortedArr[1];
+}
+
+// Example usage:
+const numbers = [10, 5, 20, 15, 8];
+console.log(findSecondHighest(numbers)); // Output: 15
+*/
+/******************************************************************/
+/*
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+
+// Example usage:
+const numbers = [1, 2, 3, 2, 1, 4, 5, 4];
+console.log(removeDuplicates(numbers)); // Output: [1, 2, 3, 4, 5]
+*/
+/******************************************************************/
