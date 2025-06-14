@@ -338,4 +338,156 @@ function groupByProperty(arr, prop) {
 
 console.log(groupByProperty(people, "age"));
 /*
+//28 /******************************************************************/
+/*
+//max in array
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function maxNum(arr) {
+  const result = arr.reduce((acc, curr) => {
+    if (acc < curr) {
+      acc = curr;
+    }
+    return acc;
+  }, 0);
+  return result;
+}
+
+console.log(maxNum(arr)); // 10
+*/
+//  29 /******************************************************************/
+// convert a string to a title case
+/*
+function toTitleCase(str) {
+  const arr = str.split(" ");
+  const result = arr.reduce((acc, curr) => {
+    acc.push(curr[0].toUpperCase() + curr.slice(1));
+    return acc;
+  }, []);
+  return result.join(" ");
+}
+
+console.log(toTitleCase("i love india")); // I Love India
+*/
+//30/******************************************************************/
+/*
+//sum of all numbers in an array
+const arr = [1,2,3,4,"1","2","true","false"];
+function sunOfAllNumbers(arr){
+    const result = arr.reduce((acc,curr)=>{
+        return Number.parseInt(curr) ? acc + (+curr) : acc
+    },0);
+    return result;
+}
+
+console.log(sunOfAllNumbers(arr)); //13
+*/
+//31/******************************************************************/
+/*
+const x = 10;
+
+function foo() {
+  console.log(x);
+  var x = 20;
+}
+
+foo(); // undefined and if use let or const in place of var it will throw a ReferenceError because x is not defined before it is used
+*/
+//32/******************************************************************/
+/*
+// sort through any item of an array 
+const companies = [
+  { id: "1", name: "Facebook" },
+  { id: "2", name: "Apple" },
+  { id: "3", name: "Google" },
+];
+
+function sortingFunction(arr){
+    const result = arr.sort((a,b)=>{
+        console.log(a.name,b.name)
+        return a.name > b.name ? 1 : -1;
+    });
+    return result;
+}
+
+console.log(sortingFunction(companies));
+*/
+//33/******************************************************************/
+/*
+let x = 10;
+
+function updateX() {
+  if (true) {
+    let x = 20;
+    console.log(x);
+  }
+  console.log(x);
+}
+
+updateX();
+*/
+//34/******************************************************************/
+/*
+const person = {
+  name: "John",
+  age: 30,
+};
+
+Object.freeze(person);
+person.age = 40;
+
+console.log(person.age); // 30, because the object is frozen and cannot be modified
+*/
+//35/******************************************************************/
+/*
+let x = 10;
+
+function outer() {
+  console.log(x);
+
+  if (false) {
+    var x = 20;
+  }
+}
+
+outer();// undefined
+*/
+//36/******************************************************************/
+/*
+const {a:ab} = {a:3};
+console.log(ab); //3
+*/
+//37******************************************************************/
+/*
+function* simpleGenerator() {
+  console.log("Start");
+  yield 1;
+  console.log("After first yield");
+  yield 2;
+  console.log("After second yield");
+  yield 3;
+  console.log("End");
+}
+
+const gen = simpleGenerator(); // Creates generator object, doesn't execute
+
+console.log(gen.next()); // {value: 1, done: false} - "Start"
+console.log(gen.next()); // {value: 2, done: false} - "After first yield"
+console.log(gen.next()); // {value: 3, done: false} - "After second yield"
+console.log(gen.next()); // {value: undefined, done: true} - "End"
+/*
+ Generators are special functions that can pause and resume their execution, producing a sequence of values over time.
+ */
+//38/******************************************************************/
+/*
+console.log(eval('2 + 2')); // 4
+console.log(eval('"Hello " + "World"')); // "Hello World"
+
+const x = 10;
+console.log(eval('x * 2')); // 20
+
+ */
+/******************************************************************/
+//sun zero
+const arr = [-5, -4, 1, 2, 3, 4];
 /******************************************************************/
