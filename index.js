@@ -278,4 +278,64 @@ function removeDuplicates(arr) {
 const numbers = [1, 2, 3, 2, 1, 4, 5, 4];
 console.log(removeDuplicates(numbers)); // Output: [1, 2, 3, 4, 5]
 */
+//23; /******************************************************************/
+/*
+//Sum of all positive numbers in an array
+const arr = [1, 2, 3, 4, -5, 5];
+
+const sumOfAllPositiveNumbers = arr.reduce((acc, curr) => {
+  return curr > 0 ? acc + curr : acc;
+}, 0);
+
+console.log(sumOfAllPositiveNumbers);
+*/
+//24; /******************************************************************/
+/*
+//flatten array
+const arr = [
+  [1, 2],
+  [3, 4],
+  [5, 6],
+  [7, 8],
+];
+const flattenArray = arr.reduce((acc, curr) => {
+  return acc.concat(curr);
+}, []);
+console.log(flattenArray);
+*/
+//25 /******************************************************************/
+/*
+//count occurance
+const fruits = ["apple", "banana", "apple", "orange", "banana"];
+function countItem(arr){
+const fruitCount = arr.reduce((acc,curr)=>{
+  acc[curr] = (acc[curr] || 0) + 1;
+  return acc;
+},{}) 
+return fruitCount
+}
+
+console.log(countItem(fruits));//{ apple: 2, banana: 2, orange: 1 }
+*/
+//26 /******************************************************************/
+/*
+const people = [
+  { name: "John", age: 25 },
+  { name: "Jane", age: 30 },
+  { name: "Bob", age: 25 },
+  { name: "Jack", age: 30 },
+];
+
+function groupByProperty(arr, prop) {
+  const result = arr.reduce((acc, curr) => {
+    console.log(acc[curr[prop]], "$$");
+    const key = curr[prop];
+    acc[key] = acc[key] ? [...acc[key], curr] : [curr];
+    return acc;
+  }, {});
+  return result;
+}
+
+console.log(groupByProperty(people, "age"));
+/*
 /******************************************************************/
