@@ -512,7 +512,7 @@ function sumZero(arr){
 
 console.log(sumZero(arr)); [-4,4]
 */
-//40/******************************************************************/
+//40./******************************************************************/
 /*
 // Anagram test
 const str1 = "hello";
@@ -537,4 +537,53 @@ function anagramFunction(str1,str2){
 
 console.log(anagramFunction("hello","llheo")); //true
 */
+//41./******************************************************************/
+/*
+count unique numbers in an array
+const arr = [1,1,2,3,4,5,7,7,9];
+
+function uniqueItemCount(arr){
+    const uniqueArray = new Set(arr)
+    return [...uniqueArray].length
+}
+
+console.log(uniqueItemCount(arr));
+
+const arr = [1,1,2,3,4,5,7,7,9];
+
+function uniqueItemCount(arr){
+    const obj = {};
+    for (item of arr){
+        obj[item] = (obj[item] || 0) + 1;
+    }
+    return Object.keys(obj).length;
+}
+
+console.log(uniqueItemCount(arr));
+*/
+//42./******************************************************************/
+/*
+//Binary search algorithm
+function binarySearch(arr, target) {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+    if (arr[mid] === target) {
+      return mid; // Target found
+    } else if (arr[mid] < target) {
+      left = mid + 1; // Search in the right half
+    } else {
+      right = mid - 1; // Search in the left half
+    }
+  }
+  return -1; // Target not found
+}
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 5)); // Output: 4 (index of the target)
+*/
+/******************************************************************/
+// binary search -> break the array into two halves and check if the target is in the left half or right half, then repeat the process
+// linear search -> check each element of the array one by one until the target is found or the end of the array is reached
+// bubble sort -> repeatedly swap adjacent elements if they are in the wrong order until the array is sorted
 /******************************************************************/
