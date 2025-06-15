@@ -487,7 +487,54 @@ const x = 10;
 console.log(eval('x * 2')); // 20
 
  */
-/******************************************************************/
+//39//******************************************************************/
 //sun zero
-const arr = [-5, -4, 1, 2, 3, 4];
+/*
+const arr =  [-5,-4,1,2,3,4];
+//for applying two pointer technique we need to sort the array first
+function sumZero(arr){
+    let left = 0;
+    let right = arr.length -1 ;
+    while(left < right){
+        let sum = arr[left] + arr[right];
+        if(sum === 0){
+            return [arr[left],arr[right]];
+        }
+        else if(sum > 1){
+            right--;
+        }
+        else if(sum < 1){
+            left++;
+        }
+    }
+    return "Not match"
+}
+
+console.log(sumZero(arr)); [-4,4]
+*/
+//40/******************************************************************/
+/*
+// Anagram test
+const str1 = "hello";
+const str2 = "llheo";
+
+function anagramFunction(str1,str2){
+    if(str1.length !== str2.length){
+        return false;
+    }
+    const strObj1 = {};
+    for(let i =0; i<str1.length;i++){
+        strObj1[str1[i]] = (strObj1[str1[i]] || 0) + 1;
+    }
+    for(item of str2){
+        if(!strObj1[item]){
+            return false;
+        }
+        strObj1[item] -= 1;
+    }
+    return true
+}
+
+console.log(anagramFunction("hello","llheo")); //true
+*/
 /******************************************************************/
