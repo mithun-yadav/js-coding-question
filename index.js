@@ -586,4 +586,18 @@ console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 5)); // Output: 4 (index o
 // binary search -> break the array into two halves and check if the target is in the left half or right half, then repeat the process
 // linear search -> check each element of the array one by one until the target is found or the end of the array is reached
 // bubble sort -> repeatedly swap adjacent elements if they are in the wrong order until the array is sorted
-/******************************************************************/
+//43./******************************************************************/
+//Prototype and constructor example
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  sayName() {
+    console.log(`My name is ${this.name}`);
+  }
+}
+
+const bob = new Person("Bob");
+bob.sayName();
+console.dir(bob); // { name: 'Bob', sayName: [Function] }
