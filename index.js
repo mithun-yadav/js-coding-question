@@ -278,4 +278,326 @@ function removeDuplicates(arr) {
 const numbers = [1, 2, 3, 2, 1, 4, 5, 4];
 console.log(removeDuplicates(numbers)); // Output: [1, 2, 3, 4, 5]
 */
+//23; /******************************************************************/
+/*
+//Sum of all positive numbers in an array
+const arr = [1, 2, 3, 4, -5, 5];
+
+const sumOfAllPositiveNumbers = arr.reduce((acc, curr) => {
+  return curr > 0 ? acc + curr : acc;
+}, 0);
+
+console.log(sumOfAllPositiveNumbers);
+*/
+//24; /******************************************************************/
+/*
+//flatten array
+const arr = [
+  [1, 2],
+  [3, 4],
+  [5, 6],
+  [7, 8],
+];
+const flattenArray = arr.reduce((acc, curr) => {
+  return acc.concat(curr);
+}, []);
+console.log(flattenArray);
+*/
+//25 /******************************************************************/
+/*
+//count occurance
+const fruits = ["apple", "banana", "apple", "orange", "banana"];
+function countItem(arr){
+const fruitCount = arr.reduce((acc,curr)=>{
+  acc[curr] = (acc[curr] || 0) + 1;
+  return acc;
+},{}) 
+return fruitCount
+}
+
+console.log(countItem(fruits));//{ apple: 2, banana: 2, orange: 1 }
+*/
+//26 /******************************************************************/
+/*
+const people = [
+  { name: "John", age: 25 },
+  { name: "Jane", age: 30 },
+  { name: "Bob", age: 25 },
+  { name: "Jack", age: 30 },
+];
+
+function groupByProperty(arr, prop) {
+  const result = arr.reduce((acc, curr) => {
+    console.log(acc[curr[prop]], "$$");
+    const key = curr[prop];
+    acc[key] = acc[key] ? [...acc[key], curr] : [curr];
+    return acc;
+  }, {});
+  return result;
+}
+
+console.log(groupByProperty(people, "age"));
+/*
+//28 /******************************************************************/
+/*
+//max in array
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function maxNum(arr) {
+  const result = arr.reduce((acc, curr) => {
+    if (acc < curr) {
+      acc = curr;
+    }
+    return acc;
+  }, 0);
+  return result;
+}
+
+console.log(maxNum(arr)); // 10
+*/
+//  29 /******************************************************************/
+// convert a string to a title case
+/*
+function toTitleCase(str) {
+  const arr = str.split(" ");
+  const result = arr.reduce((acc, curr) => {
+    acc.push(curr[0].toUpperCase() + curr.slice(1));
+    return acc;
+  }, []);
+  return result.join(" ");
+}
+
+console.log(toTitleCase("i love india")); // I Love India
+*/
+//30/******************************************************************/
+/*
+//sum of all numbers in an array
+const arr = [1,2,3,4,"1","2","true","false"];
+function sunOfAllNumbers(arr){
+    const result = arr.reduce((acc,curr)=>{
+        return Number.parseInt(curr) ? acc + (+curr) : acc
+    },0);
+    return result;
+}
+
+console.log(sunOfAllNumbers(arr)); //13
+*/
+//31/******************************************************************/
+/*
+const x = 10;
+
+function foo() {
+  console.log(x);
+  var x = 20;
+}
+
+foo(); // undefined and if use let or const in place of var it will throw a ReferenceError because x is not defined before it is used
+*/
+//32/******************************************************************/
+/*
+// sort through any item of an array 
+const companies = [
+  { id: "1", name: "Facebook" },
+  { id: "2", name: "Apple" },
+  { id: "3", name: "Google" },
+];
+
+function sortingFunction(arr){
+    const result = arr.sort((a,b)=>{
+        console.log(a.name,b.name)
+        return a.name > b.name ? 1 : -1;
+    });
+    return result;
+}
+
+console.log(sortingFunction(companies));
+*/
+//33/******************************************************************/
+/*
+let x = 10;
+
+function updateX() {
+  if (true) {
+    let x = 20;
+    console.log(x);
+  }
+  console.log(x);
+}
+
+updateX();
+*/
+//34/******************************************************************/
+/*
+const person = {
+  name: "John",
+  age: 30,
+};
+
+Object.freeze(person);
+person.age = 40;
+
+console.log(person.age); // 30, because the object is frozen and cannot be modified
+*/
+//35/******************************************************************/
+/*
+let x = 10;
+
+function outer() {
+  console.log(x);
+
+  if (false) {
+    var x = 20;
+  }
+}
+
+outer();// undefined
+*/
+//36/******************************************************************/
+/*
+const {a:ab} = {a:3};
+console.log(ab); //3
+*/
+//37******************************************************************/
+/*
+function* simpleGenerator() {
+  console.log("Start");
+  yield 1;
+  console.log("After first yield");
+  yield 2;
+  console.log("After second yield");
+  yield 3;
+  console.log("End");
+}
+
+const gen = simpleGenerator(); // Creates generator object, doesn't execute
+
+console.log(gen.next()); // {value: 1, done: false} - "Start"
+console.log(gen.next()); // {value: 2, done: false} - "After first yield"
+console.log(gen.next()); // {value: 3, done: false} - "After second yield"
+console.log(gen.next()); // {value: undefined, done: true} - "End"
+/*
+ Generators are special functions that can pause and resume their execution, producing a sequence of values over time.
+ */
+//38/******************************************************************/
+/*
+console.log(eval('2 + 2')); // 4
+console.log(eval('"Hello " + "World"')); // "Hello World"
+
+const x = 10;
+console.log(eval('x * 2')); // 20
+
+ */
+//39//******************************************************************/
+//sun zero
+/*
+const arr =  [-5,-4,1,2,3,4];
+//for applying two pointer technique we need to sort the array first
+function sumZero(arr){
+    let left = 0;
+    let right = arr.length -1 ;
+    while(left < right){
+        let sum = arr[left] + arr[right];
+        if(sum === 0){
+            return [arr[left],arr[right]];
+        }
+        else if(sum > 1){
+            right--;
+        }
+        else if(sum < 1){
+            left++;
+        }
+    }
+    return "Not match"
+}
+
+console.log(sumZero(arr)); [-4,4]
+*/
+//40./******************************************************************/
+/*
+// Anagram test
+const str1 = "hello";
+const str2 = "llheo";
+
+function anagramFunction(str1,str2){
+    if(str1.length !== str2.length){
+        return false;
+    }
+    const strObj1 = {};
+    for(let i =0; i<str1.length;i++){
+        strObj1[str1[i]] = (strObj1[str1[i]] || 0) + 1;
+    }
+    for(item of str2){
+        if(!strObj1[item]){
+            return false;
+        }
+        strObj1[item] -= 1;
+    }
+    return true
+}
+
+console.log(anagramFunction("hello","llheo")); //true
+*/
+//41./******************************************************************/
+/*
+count unique numbers in an array
+const arr = [1,1,2,3,4,5,7,7,9];
+
+function uniqueItemCount(arr){
+    const uniqueArray = new Set(arr)
+    return [...uniqueArray].length
+}
+
+console.log(uniqueItemCount(arr));
+
+const arr = [1,1,2,3,4,5,7,7,9];
+
+function uniqueItemCount(arr){
+    const obj = {};
+    for (item of arr){
+        obj[item] = (obj[item] || 0) + 1;
+    }
+    return Object.keys(obj).length;
+}
+
+console.log(uniqueItemCount(arr));
+*/
+//42./******************************************************************/
+/*
+//Binary search algorithm
+function binarySearch(arr, target) {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+    if (arr[mid] === target) {
+      return mid; // Target found
+    } else if (arr[mid] < target) {
+      left = mid + 1; // Search in the right half
+    } else {
+      right = mid - 1; // Search in the left half
+    }
+  }
+  return -1; // Target not found
+}
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 5)); // Output: 4 (index of the target)
+*/
 /******************************************************************/
+// binary search -> break the array into two halves and check if the target is in the left half or right half, then repeat the process
+// linear search -> check each element of the array one by one until the target is found or the end of the array is reached
+// bubble sort -> repeatedly swap adjacent elements if they are in the wrong order until the array is sorted
+//43./******************************************************************/
+//Prototype and constructor example
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  sayName() {
+    console.log(`My name is ${this.name}`);
+  }
+}
+
+const bob = new Person("Bob");
+bob.sayName();
+console.dir(bob); // { name: 'Bob', sayName: [Function] }
