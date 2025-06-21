@@ -583,11 +583,11 @@ function binarySearch(arr, target) {
 console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 5)); // Output: 4 (index of the target)
 */
 /******************************************************************/
-// binary search -> break the array into two halves and check if the target is in the left half or right half, then repeat the process
 // linear search -> check each element of the array one by one until the target is found or the end of the array is reached
 // bubble sort -> repeatedly swap adjacent elements if they are in the wrong order until the array is sorted
 //43./******************************************************************/
 //Prototype and constructor example
+/*
 class Person {
   constructor(name) {
     this.name = name;
@@ -601,3 +601,54 @@ class Person {
 const bob = new Person("Bob");
 bob.sayName();
 console.dir(bob); // { name: 'Bob', sayName: [Function] }
+*/
+//44./******************************************************************/
+//Binary search algorithm
+/*
+function binarySearchFunc(arr,res){
+    let left = 0;
+    let right = arr.length;
+   
+    while(left < right){
+        let mid = Math.floor((left + right) / 2)
+        if(arr[mid] === res){
+            return mid;
+        }
+        if(arr[mid] > res){
+            right--;
+        }else{
+            left++
+        }
+    }
+    return -1
+}
+
+console.log(binarySearchFunc([1,2,3,4,5,6,7],7));
+*/
+//45./******************************************************************/
+//bubble sort algorithm
+/*
+function bubbleSortFun(arr){
+  const n = arr.length;
+  const resultArr = [...arr];
+  for(let i = 0; i<n;i++){
+      let swap = false;
+      for(let j =0; j<n - i -1;j++){
+          if(arr[j] > arr[j+1]){
+              let copyVal = arr[j+1];
+              arr[j+1] = arr[j];
+              arr[j] = copyVal;
+              swap= true;
+          }
+      }
+      if(!swap){
+          break;
+      }
+  }
+  return arr;
+}
+
+const result = bubbleSortFun([1,3,4,2,7,5,6]);
+console.log(result);
+*/
+//46./******************************************************************/
