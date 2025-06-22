@@ -583,8 +583,6 @@ function binarySearch(arr, target) {
 console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 5)); // Output: 4 (index of the target)
 */
 /******************************************************************/
-// linear search -> check each element of the array one by one until the target is found or the end of the array is reached
-// bubble sort -> repeatedly swap adjacent elements if they are in the wrong order until the array is sorted
 //43./******************************************************************/
 //Prototype and constructor example
 /*
@@ -652,3 +650,31 @@ const result = bubbleSortFun([1,3,4,2,7,5,6]);
 console.log(result);
 */
 //46./******************************************************************/
+// Solution 1: Sliding Window with Set - Most Efficient
+/*
+function lengthOfLongestSubstring(s) {
+  //sliding window technique
+  if (!s.length) {
+    return 0;
+  }
+  let end = 0;
+  let start = 0;
+  let maxLength = 0;
+  let uniqueCharacters = new Set();
+  while (end < s.length) {
+    if (!uniqueCharacters.has(s[end])) {
+      uniqueCharacters.add(s[end]);
+      end++;
+      maxLength = Math.max(maxLength, uniqueCharacters.size);
+    } else {
+      uniqueCharacters.delete(s[start]);
+      start++;
+    }
+  }
+  return { maxLength, uniqueCharacters };
+}
+
+const result = lengthOfLongestSubstring("abcaad");
+console.log(result);
+*/
+/****************************************************************/
