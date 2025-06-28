@@ -677,4 +677,29 @@ function lengthOfLongestSubstring(s) {
 const result = lengthOfLongestSubstring("abcaad");
 console.log(result);
 */
-/****************************************************************/
+//47./****************************************************************/
+const prom1 = Promise.resolve("Resolve1");
+const prom2 = Promise.reject("Reject1");
+const prom3 = Promise.resolve("Resolve2");
+const prom4 = Promise.reject("Reject1");
+const promiseArr = [prom1, prom2, prom3, prom4];
+const promiseVal = Promise.allSettled(promiseArr).then((res) => {
+  res.forEach((item, index) => {
+    console.log(item);
+  });
+  return res;
+});
+const valFun = async () => {
+  const val = await promiseVal;
+  return val;
+};
+valFun()
+  .then((res) => {
+    console.log(res); // undefined
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally(() => {
+    console.log("Finally response");
+  });
